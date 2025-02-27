@@ -1,0 +1,16 @@
+<svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="100" fill="#1E2A38"/>
+
+  <!-- Water Drop Shape -->
+  <path d="M50 10 C20 50, 20 80, 50 90 C80 80, 80 50, 50 10 Z" fill="white"/>
+
+  <!-- "HP" inside the water drop -->
+  <text x="38" y="65" font-family="Arial" font-size="24" font-weight="bold" fill="#1E2A38">HP</text>
+
+  <!-- "HAPA.VN" Text -->
+  <text x="90" y="55" font-family="Arial" font-size="40" font-weight="bold" fill="white">HAPA.VN</text>
+
+  <!-- Tagline -->
+  <text x="90" y="80" font-family="Arial" font-size="16" fill="white">Vì sức khỏe và hạnh phúc là vô giá</text>
+</svg>
