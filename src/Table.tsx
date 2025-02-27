@@ -1,5 +1,6 @@
 import { Add, ExpandLess, ExpandMore, FilterList } from "@mui/icons-material";
 import {
+  Box,
   Button,
   CardMedia,
   Checkbox,
@@ -8,12 +9,14 @@ import {
   MenuItem,
   Paper,
   Select,
+  Tab,
   Table,
   TableBody,
   TableCell,
   TableContainer,
   TableHead,
   TableRow,
+  Tabs,
   TextField,
   Toolbar,
   Typography,
@@ -160,7 +163,17 @@ const ProductTable = () => {
       prev.includes(id) ? prev.filter((row) => row !== id) : [...prev, id]
     );
   };
+  function a11yProps(index: number) {
+    return {
+      id: `simple-tab-${index}`,
+      "aria-controls": `simple-tabpanel-${index}`,
+    };
+  }
+  const [value, setValue] = React.useState(0);
 
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
   return (
     <Wrapper>
       <Toolbar sx={{ justifyContent: "space-between" }}>
@@ -175,7 +188,15 @@ const ProductTable = () => {
       </Toolbar>
       <Paper sx={{ p: 2 }}>
         {/* Search & Filter Section */}
-
+        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            aria-label="basic tabs example"
+          >
+            <Tab label="Tất Cả" {...a11yProps(0)} />
+          </Tabs>
+        </Box>
         <Toolbar>
           <TextField
             placeholder="Tìm theo tên sản phẩm, SKU"
